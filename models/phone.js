@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          is: /^[A-Z][A-Z]*[a-z]*\d*$/,
+          is: /^(\w+\d*(\s|-)?)(\w+\d*(\s|-)?)*$/,
           len: [2, 64],
         },
       },
@@ -25,7 +25,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          is: /^[A-Z][A-Z]*[a-z]*\d*$/,
+          is: /^(\w+\d*(\s|-)?)(\w+\d*(\s|-)?)*$/,
           len: [2, 32],
         },
       },
@@ -44,7 +44,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          is: /^[A-Z][A-Z]*[a-z]*\d*$/,
+          is: /^(\w+\d*(\s|-)?)(\w+\d*(\s|-)?)*$/,
           len: [2, 64],
         },
       },
