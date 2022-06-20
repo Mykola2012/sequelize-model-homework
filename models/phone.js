@@ -31,6 +31,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       manufactureYear: {
         type: DataTypes.DATEONLY,
+        field: 'manufacture_year',
       },
       ram: {
         type: DataTypes.INTEGER,
@@ -49,6 +50,7 @@ module.exports = (sequelize, DataTypes) => {
       },
       screenDiagonal: {
         type: DataTypes.INTEGER,
+        field: 'screen_diagonal',
         allowNull: false,
         validate: {
           min: 1,
