@@ -17,7 +17,7 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          is: /^(\w+\d*(\s|-)?)(\w+\d*(\s|-)?)*$/,
+          is: /^(\w+\d*(\s|-)?)(\w*\d*(\s|-)?)*$/,
           len: [2, 64],
         },
       },
@@ -25,11 +25,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          is: /^(\w+\d*(\s|-)?)(\w+\d*(\s|-)?)*$/,
+          is: /^(\w+\d*(\s|-)?)(\w*\d*(\s|-)?)*$/,
           len: [2, 32],
         },
       },
-      manufactureYear: {
+      manufacture_year: {
         type: DataTypes.DATEONLY,
       },
       ram: {
@@ -43,11 +43,11 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         allowNull: false,
         validate: {
-          is: /^(\w+\d*(\s|-)?)(\w+\d*(\s|-)?)*$/,
+          is: /^(\w+\d*(\s|-)?)(\w*\d*(\s|-)?)*$/,
           len: [2, 64],
         },
       },
-      screenDiagonal: {
+      screen_diagonal: {
         type: DataTypes.FLOAT,
 
         allowNull: false,

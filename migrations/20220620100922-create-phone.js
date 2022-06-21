@@ -25,7 +25,7 @@ module.exports = {
         type: Sequelize.STRING,
       },
       screenDiagonal: {
-        type: Sequelize.INTEGER,
+        type: Sequelize.FLOAT,
         field: 'screen_diagonal',
       },
       nfc: {
