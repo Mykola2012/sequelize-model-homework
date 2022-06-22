@@ -49,7 +49,6 @@ module.exports = (sequelize, DataTypes) => {
       },
       screen_diagonal: {
         type: DataTypes.FLOAT,
-
         allowNull: false,
         validate: {
           min: 1,
