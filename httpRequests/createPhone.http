@@ -17,7 +17,7 @@ POST http://localhost:5000/api/phones HTTP/1.1
 Content-Type: application/vnd.api+json
 
 {
-  "model": "galaxy S22",
+  "model": "",
   "brand": "Samsung",
   "manufactureYear": "2022",
   "ram": "8",
@@ -32,7 +32,7 @@ Content-Type: application/vnd.api+json
 
 {
   "model": "Galaxy S22",
-  "brand": "samsung",
+  "brand": "",
   "manufactureYear": "2022",
   "ram": "8",
   "processor": "Exynos 2200",
@@ -92,7 +92,7 @@ Content-Type: application/vnd.api+json
   "manufactureYear": "2022",
   "ram": "8",
   "processor": "Exynos 2200",
-  "screenDiagonal": "6.1.1",
+  "screenDiagonal": "",
   "nfc": true
 }
 
@@ -107,5 +107,5 @@ Content-Type: application/vnd.api+json
   "ram": "8",
   "processor": "Exynos 2200",
   "screenDiagonal": "6.1",
-  "nfc": "Yes"
+  "nfc": ""
 }
