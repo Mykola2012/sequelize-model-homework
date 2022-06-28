@@ -1,7 +1,7 @@
 'use strict';
 module.exports = {
   async up (queryInterface, Sequelize) {
-    await queryInterface.createTable('Phones', {
+    await queryInterface.createTable('phones', {
       id: {
         allowNull: false,
         autoIncrement: true,
@@ -14,7 +14,7 @@ module.exports = {
       brand: {
         type: Sequelize.STRING,
       },
-      manufactureYear: {
+      manufacture_year: {
         type: Sequelize.DATEONLY,
         field: 'manufacture_year',
       },
@@ -24,24 +24,24 @@ module.exports = {
       processor: {
         type: Sequelize.STRING,
       },
-      screenDiagonal: {
+      screen_diagonal: {
         type: Sequelize.FLOAT,
         field: 'screen_diagonal',
       },
       nfc: {
         type: Sequelize.BOOLEAN,
       },
-      createdAt: {
+      created_at: {
         allowNull: false,
         type: Sequelize.DATE,
       },
-      updatedAt: {
+      updated_at: {
         allowNull: false,
         type: Sequelize.DATE,
       },
     });
   },
   async down (queryInterface, Sequelize) {
-    await queryInterface.dropTable('Phones');
+    await queryInterface.dropTable('phones');
   },
 };

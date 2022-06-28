@@ -29,7 +29,7 @@ module.exports = (sequelize, DataTypes) => {
           len: [2, 32],
         },
       },
-      manufacture_year: {
+      manufactureYear: {
         type: DataTypes.DATEONLY,
       },
       ram: {
@@ -47,7 +47,7 @@ module.exports = (sequelize, DataTypes) => {
           len: [2, 64],
         },
       },
-      screen_diagonal: {
+      screenDiagonal: {
         type: DataTypes.FLOAT,
         allowNull: false,
         validate: {
@@ -62,6 +62,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       sequelize,
       modelName: 'Phone',
+      underscored: true,
     }
   );
   return Phone;
