@@ -8,7 +8,7 @@ const {
   const phone = {
     model: 'Y6 2019',
     brand: 'Huawei',
-    manufacture_year: '2019-03-01',
+    manufacture_year: '2019',
     ram: 2,
     processor: 'MediaTek MT6761',
     screen_diagonal: 6.09,
