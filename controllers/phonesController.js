@@ -40,7 +40,24 @@ module.exports.getPhones = async (req, res, next) => {
 };
 
 module.exports.getPhoneById = async (req, res, next) => {
-  console.log('first');
+  const { phoneId } = req.params;
+
+  try {
+    const foundPhone = await Phone.findByPk(phoneId, {
+      raw: true,
+      attributes: {
+        exclude: ['createdAt', 'updatedAt'],
+      },
+    });
+
+    if (!foundPhone) {
+      return next(createError(404, 'Phone Not Found'));
+    }
+
+    res.status(200).send({ data: foundPhone });
+  } catch (err) {
+    next(err);
+  }
 };
 
 module.exports.updatePhone = async (req, res, next) => {
