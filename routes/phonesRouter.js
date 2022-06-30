@@ -9,7 +9,7 @@ phonesRouter
   .get(phonesController.getPhones);
 
 phonesRouter
-  .route('/:userId')
+  .route('/:phoneId')
   .get(phonesController.getPhoneById)
   .patch(phonesController.updatePhone)
   .put(phonesController.updateOrCreatePhone)
