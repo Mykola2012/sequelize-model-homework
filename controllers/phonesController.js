@@ -111,5 +111,19 @@ module.exports.updateOrCreatePhone = async (req, res, next) => {
 };
 
 module.exports.deletePhone = async (req, res, next) => {
-  console.log('first');
+  const { phoneId } = req.params;
+
+  try {
+    const deletingPhoneCount = await Phone.destroy({
+      where: { id: phoneId },
+    });
+
+    if (!deletingPhoneCount) {
+      return next(createError(404, 'Phone Not Found'));
+    }
+
+    res.status(204).end();
+  } catch (err) {
+    next(err);
+  }
 };
