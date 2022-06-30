@@ -12,7 +12,7 @@ phonesRouter
   .route('/:phoneId')
   .get(phonesController.getPhoneById)
   .patch(phonesController.updatePhone)
-  .put(phonesController.updateOrCreatePhone)
+  .put(phonesController.updateOrCreatePhone, phonesController.createPhone)
   .delete(phonesController.deletePhone);
 
 module.exports = phonesRouter;
