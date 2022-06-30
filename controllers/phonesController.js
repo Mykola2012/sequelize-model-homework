@@ -1,4 +1,5 @@
 const _ = require('lodash');
+const createError = require('http-errors');
 const { Phone } = require('./../models');
 
 module.exports.createPhone = async (req, res, next) => {
@@ -17,7 +18,25 @@ module.exports.createPhone = async (req, res, next) => {
 };
 
 module.exports.getPhones = async (req, res, next) => {
-  console.log('first');
+  const { limit = 10, offset = 0 } = req.query;
+  try {
+    const foundPhones = await Phone.findAll({
+      raw: true,
+      attributes: {
+        exclude: ['createdAt', 'updatedAt'],
+      },
+      limit,
+      offset,
+    });
+
+    if (!foundPhones.length) {
+      return next(createError(404, 'Phones Not Found'));
+    }
+
+    res.status(200).send({ data: foundPhones });
+  } catch (err) {
+    next(err);
+  }
 };
 
 module.exports.getPhoneById = async (req, res, next) => {
