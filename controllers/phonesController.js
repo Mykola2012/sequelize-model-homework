@@ -61,7 +61,28 @@ module.exports.getPhoneById = async (req, res, next) => {
 };
 
 module.exports.updatePhone = async (req, res, next) => {
-  console.log('first');
+  const {
+    body,
+    params: { phoneId },
+  } = req;
+
+  try {
+    const [, [updatePhone]] = await Phone.update(body, {
+      raw: true,
+      where: { id: phoneId },
+      returning: true,
+    });
+
+    if (!updatePhone) {
+      return next(createError(404, 'Phone Not Found'));
+    }
+
+    const preparedPhone = _.omit(updatePhone, ['createdAt', 'updatedAt']);
+
+    res.status(200).send({ data: preparedPhone });
+  } catch (err) {
+    next(err);
+  }
 };
 
 module.exports.updateOrCreatePhone = async (req, res, next) => {
